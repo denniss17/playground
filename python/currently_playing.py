@@ -44,11 +44,15 @@ def temp(x):
 if __name__ == '__main__':
     last = None
     while True:
-        current = get_3fm()
-        if current != last:
-            last = current
-            print()
-            print(current)
-        sys.stdout.write('.')
-        sys.stdout.flush()
+        try:
+            current = get_3fm()
+            if current != last:
+                last = current
+                print()
+                print(current)
+            sys.stdout.write('.')
+            sys.stdout.flush()
+        except:
+            sys.stdout.write('E')
+            sys.stdout.flush()
         time.sleep(30)
